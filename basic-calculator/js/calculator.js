@@ -4,6 +4,7 @@ const configs_class = [".config1",".config2",".dot",".config3",".config4",".equa
 
 let input = document.querySelector(".input")
 let inputString = []
+let buffer = ""
 //number buttons
 const numbers = []
 for(let i=0 ; i<numbers_class.length ; i++){
@@ -12,9 +13,15 @@ for(let i=0 ; i<numbers_class.length ; i++){
 for(let i=0 ; i<numbers_class.length ; i++){
     numbers[i] = numbers_class[i].addEventListener("click",function(){
         onclick(numbers_class[i])
+        buffer += numbers_class[i].innerHTML
+        console.log(buffer)
+        
         document.querySelector(".operation").classList.remove("ristricted")
     })
+    inputString[inputString.length] = buffer
+    console.log("input " + inputString)
 }
+
 
 // Arithmetic operations
 const operations = []
@@ -27,6 +34,7 @@ for(let i=0 ; i<operations_class.length ; i++){
             document.querySelector(".operation").classList.add("ristricted")
             document.querySelector(".dot").classList.remove("ristricted")
             onclick(operations_class[i])
+            
         }
     })
 }
@@ -41,7 +49,7 @@ for(let i=0 ; i<configs_class.length ; i++){
 for(let i=0 ; i<2 ; i++){
     configs[i] = configs_class[i].addEventListener("click",function(){
         if(i == 0){
-            if(document.querySelector(".operation").classList.contains("ristricted")){
+            if(document.querySelector(".operation").classList.contains("ristricted") || input.innerHTML.length == 0){
                 if(!document.querySelector(".config1").classList.contains("ristricted")){
                     document.querySelector(".config1").classList.add("ristricted")
                     onclick(configs_class[i])
@@ -77,14 +85,22 @@ configs_class[3].addEventListener("click",function(){
     document.querySelector(".operation").classList.remove("ristricted")
 })
 
+let arr = []
+let a = "a"
+let b = "b"
+arr.push(a)
+arr.pop()
+arr.push(b)
 console.log(arr)
+
+
 function onclick(element){
         if(input.innerHTML == "0"){
             input.innerHTML = element.innerHTML
         }
         else if(input.innerHTML.length != 15){
             input.innerHTML = input.innerHTML.concat(element.innerHTML)
-            console.log(input.innerHTML.length)
+           // console.log(input.innerHTML.length)
         }
 }
 
