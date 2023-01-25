@@ -30,10 +30,10 @@ body{
     padding: 1rem 0.5rem;
     text-align: end;
 }
-.history{
-    text-align: start;
+.prev-input{
+    font-size: 1.25rem;
 }
-.input{
+.curr-input{
     font-size: 3rem;
 }
 .config{
