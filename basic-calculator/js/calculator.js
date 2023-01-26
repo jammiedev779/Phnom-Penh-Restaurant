@@ -27,10 +27,8 @@ for(let i=0 ; i<operations_class.length ; i++){
 for(let i=0 ; i<operations_class.length ; i++){
     operations[i] = operations_class[i].addEventListener("click",function(){
         prev_number = curr_input.innerHTML
-        onclick(operations_class[i])
+        prev_input.innerHTML = curr_input.innerHTML + operations_class[i].innerHTML
         operator = i
-        prev_input.innerHTML = curr_input.innerHTML
-        document.querySelector("iconify-icon").style.fontSize = "1rem"
         curr_input.innerHTML = "0"
     })
 }
@@ -43,8 +41,12 @@ for(let i=0 ; i<configs_class.length ; i++){
 
 // history button
 configs_class[0].addEventListener("click",()=>{
-    console.log("d")
-    document.querySelector(".history-page").style.display = ""
+    if(document.querySelector(".history-page").classList.contains("hide")){
+        document.querySelector(".history-page").classList.remove("hide")
+    }
+    else{
+        document.querySelector(".history-page").classList.add("hide")
+    }
 })
 
 //for "." function
