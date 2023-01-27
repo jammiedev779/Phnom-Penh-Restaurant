@@ -19,20 +19,17 @@ body{
     background-color: rgb(135, 135, 135);
     border-radius: 0.5rem;
     padding: 1rem 1rem;
+    overflow: auto;
 }
 .hide{
     display: none;
 }
-.history-icon{  
-    display: flex;
-    justify-content: space-between;
-}
-.history-icon iconify-icon{
-    font-size: 2rem;
-}
 .history-text ul{
     list-style: none;
     padding: 0;
+}
+.history-text ul li{
+    line-height: 2rem;
 }
 .calculator{
     width: 40rem;

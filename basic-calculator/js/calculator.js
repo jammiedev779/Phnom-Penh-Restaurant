@@ -6,7 +6,10 @@ let curr_number = ""
 let prev_number = ""
 let curr_input = document.querySelector(".curr-input")
 let prev_input = document.querySelector(".prev-input")
+let history = document.querySelector(".history-text ul")
+let history_storage = []
 let operator
+
 //number buttons
 const numbers = []
 for(let i=0 ; i<numbers_class.length ; i++){
@@ -75,6 +78,10 @@ configs_class[4].addEventListener("click",()=> {
     else if(operator == 1) curr_input.innerHTML = subtract()
     else if(operator == 2) curr_input.innerHTML = multiply()
     else curr_input.innerHTML = divide()
+
+    let history_text = prev_input.innerHTML + curr_input.innerHTML
+    history_storage.push(history_text)
+    createHistoryList(history_storage,history_storage.length-1)
 })
 // "X" or delete button
 configs_class[5].addEventListener("click",()=>{
@@ -86,6 +93,13 @@ configs_class[5].addEventListener("click",()=>{
     }
     
 })
+
+//History
+function createHistoryList(history_storage,length){
+    let list = document.createElement('li')
+    history.append(list)
+    document.querySelector(".history-text ul").lastChild.innerHTML = history_storage[length]
+}
 
 function onclick(element){
         if(curr_input.innerHTML == "0" && element.innerHTML != "."){
