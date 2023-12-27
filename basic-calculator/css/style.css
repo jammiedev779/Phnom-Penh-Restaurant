@@ -1,0 +1,125 @@
+html{
+    font-size: 10px;
+    font-family: "Inter",sans-serif;
+    color: white;
+}
+body{
+    background-color: #212024;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 10%;
+}
+.history-page{
+    width: 15rem;
+    height: 27.5rem;
+    background-color: rgb(135, 135, 135);
+    border-radius: 0.5rem;
+    padding: 1rem 1rem;
+    overflow: auto;
+}
+.hide{
+    display: none;
+}
+.history-text ul{
+    list-style: none;
+    padding: 0;
+}
+.history-text ul li{
+    line-height: 2rem;
+}
+.calculator{
+    width: 40rem;
+    height: 27.5rem;
+    border: 2px solid rgb(135, 135, 135);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 1.5rem;
+    gap: 1rem;
+}
+.display{
+    width: 38.5rem;
+    border: 1px solid #a3a3a3;
+    border-radius: 0.75rem;
+    height: 6rem;
+    background-color: #212024;
+    padding: 1rem 0.5rem;
+    text-align: end;
+}
+.prev-input{
+    font-size: 1.25rem;
+}
+.curr-input{
+    font-size: 3rem;
+}
+.config{
+    display: grid;
+    grid-template-columns: repeat(4,9rem);
+    grid-auto-rows: 3rem;
+    grid-column-gap: 1rem;
+}
+.config div:nth-child(n){
+    background-color: #5e6369;
+    border-radius: 0.35rem;
+    display: grid;
+    place-items: center;
+}
+.basic-components{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.num-and-operation{
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-column-gap: 0.8rem;
+}
+.number{
+    display: grid;
+    grid-template-columns: repeat(3,9rem);
+    grid-auto-rows: 3rem;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+}
+.number div:nth-child(n){
+    background-color: #3d4143;
+    display: grid;
+    place-items: center;
+    border-radius: 0.35rem;
+}
+.operation{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.operation div:nth-child(n){
+    width: 9rem;
+    height: 3rem;
+    background-color: #5e6369;
+    display: grid;
+    place-items: center;
+    border-radius: 0.35rem;
+}
+.number .equal{
+    background-color: #8bb5f8 !important;
+    color: black;
+}
+.number .dot{
+    font-size: 2rem;
+}
+.compo:hover{
+    opacity: 0.75;
+}
+iconify-icon{
+    font-size: 1rem;
+}
+.compo iconify-icon{
+    font-size: 1.5rem !important;
+}
+
